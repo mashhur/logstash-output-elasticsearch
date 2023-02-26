@@ -1,3 +1,12 @@
+# Update the container, and verify the minimal packages required are installed;
+# Update certs so we can resolve DNS, ensure ssh-keyscan and git are installed.
+RUN apt-get upgrade && \
+  apt-get update -y && \
+  apt-get install -y vim \
+  ca-certificates \
+  openssh-client \
+  git
+
 ARG ELASTIC_STACK_VERSION
 FROM docker.elastic.co/elasticsearch/elasticsearch:$ELASTIC_STACK_VERSION
 
