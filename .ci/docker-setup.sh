@@ -46,6 +46,8 @@ if [ "$ELASTIC_STACK_VERSION" ]; then
 
     cd .ci
 
+    echo "Inside the .ci, firing up docker composer..."
+
     if [ "$INTEGRATION" == "true" ]; then
         docker-compose down
         docker-compose build
