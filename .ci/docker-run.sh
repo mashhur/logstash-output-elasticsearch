@@ -4,6 +4,7 @@
 set -ex
 
 cd .ci
+echo "Inside .ci, ready to fire docker composer."
 
 if [ "$INTEGRATION" == "true" ]; then
     docker-compose up --exit-code-from logstash
